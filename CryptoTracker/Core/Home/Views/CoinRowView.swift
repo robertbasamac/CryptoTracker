@@ -49,7 +49,7 @@ extension CoinRowView {
             
             Text(coin.symbol.uppercased())
                 .font(.headline)
-                .padding(.leading, 6)
+                .padding(.leading, 10)
                 .foregroundColor(Color.theme.accennt)
         }
     }

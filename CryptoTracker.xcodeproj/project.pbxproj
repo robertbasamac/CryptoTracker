@@ -19,6 +19,7 @@
 		092DDB6F28A8018A00CE8235 /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DDB6E28A8018A00CE8235 /* CoinRowView.swift */; };
 		092DDB7328A802CB00CE8235 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DDB7228A802CB00CE8235 /* PreviewProvider.swift */; };
 		092DDB7528A8071400CE8235 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DDB7428A8071400CE8235 /* Double.swift */; };
+		092DDB7728A81E7D00CE8235 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DDB7628A81E7D00CE8235 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		092DDB6E28A8018A00CE8235 /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
 		092DDB7228A802CB00CE8235 /* PreviewProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		092DDB7428A8071400CE8235 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		092DDB7628A81E7D00CE8235 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		092DDB6228A7B41600CE8235 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				092DDB7628A81E7D00CE8235 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				092DDB6F28A8018A00CE8235 /* CoinRowView.swift in Sources */,
+				092DDB7728A81E7D00CE8235 /* HomeViewModel.swift in Sources */,
 				092DDB4F28A7AAFA00CE8235 /* ContentView.swift in Sources */,
 				092DDB6428A7B42C00CE8235 /* HomeView.swift in Sources */,
 				092DDB4D28A7AAFA00CE8235 /* CryptoTrackerApp.swift in Sources */,
