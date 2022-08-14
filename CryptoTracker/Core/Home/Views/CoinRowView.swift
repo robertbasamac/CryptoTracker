@@ -50,7 +50,7 @@ extension CoinRowView {
             Text(coin.symbol.uppercased())
                 .font(.headline)
                 .padding(.leading, 10)
-                .foregroundColor(Color.theme.accennt)
+                .foregroundColor(Color.theme.accent)
         }
     }
     
@@ -61,14 +61,14 @@ extension CoinRowView {
             
             Text((coin.currentHoldings ?? 0).asNumberString())
         }
-        .foregroundColor(Color.theme.accennt)
+        .foregroundColor(Color.theme.accent)
     }
     
     private var rightColumn: some View {
         VStack(alignment: .trailing) {
             Text(coin.currentPrice.asCurrencyWith6Decimals())
                 .bold()
-                .foregroundColor(Color.theme.accennt)
+                .foregroundColor(Color.theme.accent)
             
             Text(coin.priceChangePercentage24H?.asPercentString() ?? "")
                 .foregroundColor(
