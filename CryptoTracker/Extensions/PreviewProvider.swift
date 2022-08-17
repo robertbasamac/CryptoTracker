@@ -11,14 +11,15 @@ import SwiftUI
 extension PreviewProvider {
     
     static var dev: DeveloperPreview {
-        return DeveloperPreview.instance
+        return DeveloperPreview.shared
     }
     
 }
 
 class DeveloperPreview {
     
-    static let instance = DeveloperPreview()
+    static let shared = DeveloperPreview()
+    
     private init() { }
     
     let homeVM = HomeViewModel()

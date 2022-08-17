@@ -33,9 +33,6 @@ struct HomeView: View {
                     portofolioCoinsList
                         .transition(.move(edge: .trailing))
                 }
-               
-                
-                Spacer(minLength: 0)
             }
         }
     }
@@ -83,6 +80,24 @@ extension HomeView {
         .padding(.horizontal)
     }
     
+    private var columnTitles: some View {
+        HStack {
+            Text("Coin")
+            
+            Spacer()
+            
+            if showPortofolio {
+                Text("Holdings")
+            }
+            
+            Text("Price")
+                .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+        }
+        .font(.caption)
+        .foregroundColor(Color.theme.secondaryText)
+        .padding(.horizontal)
+    }
+    
     private var allCoinsList: some View {
         List {
             ForEach(vm.allCoins) { coin in
@@ -101,23 +116,5 @@ extension HomeView {
             }
         }
         .listStyle(.plain)
-    }
-    
-    private var columnTitles: some View {
-        HStack {
-            Text("Coin")
-            
-            Spacer()
-            
-            if showPortofolio {
-                Text("Holdings")
-            }
-            
-            Text("Price")
-                .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
-        }
-        .font(.caption)
-        .foregroundColor(Color.theme.secondaryText)
-        .padding(.horizontal)
     }
 }

@@ -28,8 +28,16 @@ class NetworkingManager {
     
     static func download(url: URL) -> AnyPublisher<Data, any Error> {
         
+//        1. create the Publisher
         return URLSession.shared.dataTaskPublisher(for: url)
+        
+//            2. subscribe publisher on background thread (this is done by default so this step can be omitted)
             .subscribe(on: DispatchQueue.global(qos: .default))
+        
+//            3. receive on main thread (needed in order to update the UI)
+            .receive(on: DispatchQueue.main)
+
+//            4. check that the data is good (using tryMap)
 //            .tryMap { (output) -> Data in
 //                guard let response = output.response as? HTTPURLResponse,
 //                      response.statusCode >= 200 && response.statusCode < 300 else {
@@ -38,7 +46,6 @@ class NetworkingManager {
 //                return output.data
 //            }
             .tryMap({ try handleUrlResponse(output: $0, url: url) })
-            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher() // will take the publisher and convert it to AnyPublisher -> we can change the return data type of the function
     }
     
@@ -50,7 +57,7 @@ class NetworkingManager {
         return output.data
     }
     
-    static func handleCompletion(completion: Subscribers.Completion<Publishers.Decode<AnyPublisher<Data, Error>, [CoinModel], JSONDecoder>.Failure>) {
+    static func handleCompletion(completion: Subscribers.Completion<Error>) {
         switch completion {
         case .finished:
             break

@@ -25,9 +25,13 @@ class CoinImageService {
         guard let url = URL(string: coin.image) else { return }
         
         imageSubscription = NetworkingManager.download(url: url)
+        
+//            5. decode the data
             .tryMap({ (data) -> UIImage? in
                 return UIImage(data:  data)
             })
+        
+//            6. put the item into our app using sink
             .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnedImage) in
                 self?.image = returnedImage
                 self?.imageSubscription?.cancel()
