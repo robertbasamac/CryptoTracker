@@ -24,6 +24,7 @@
 		09A7D6C928A94AB500A305CA /* CoinImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7D6C828A94AB500A305CA /* CoinImageView.swift */; };
 		09A7D6CB28A94BC600A305CA /* CoinImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7D6CA28A94BC600A305CA /* CoinImageService.swift */; };
 		09A7D6CD28A94D1800A305CA /* CoinImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7D6CC28A94D1800A305CA /* CoinImageViewModel.swift */; };
+		09A7E54B28AEAAE60064F686 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7E54A28AEAAE60064F686 /* LocalFileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		09A7D6C828A94AB500A305CA /* CoinImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageView.swift; sourceTree = "<group>"; };
 		09A7D6CA28A94BC600A305CA /* CoinImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageService.swift; sourceTree = "<group>"; };
 		09A7D6CC28A94D1800A305CA /* CoinImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageViewModel.swift; sourceTree = "<group>"; };
+		09A7E54A28AEAAE60064F686 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				09A7D6C528A93D4800A305CA /* NetworkingManager.swift */,
+				09A7E54A28AEAAE60064F686 /* LocalFileManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				092DDB7728A81E7D00CE8235 /* HomeViewModel.swift in Sources */,
 				092DDB6428A7B42C00CE8235 /* HomeView.swift in Sources */,
 				092DDB4D28A7AAFA00CE8235 /* CryptoTrackerApp.swift in Sources */,
+				09A7E54B28AEAAE60064F686 /* LocalFileManager.swift in Sources */,
 				092DDB6828A7B62A00CE8235 /* CircleButtonView.swift in Sources */,
 				092DDB5E28A7AD3200CE8235 /* Color.swift in Sources */,
 				092DDB6A28A7BA8800CE8235 /* CircleButtonAnimationView.swift in Sources */,
