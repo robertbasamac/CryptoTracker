@@ -80,7 +80,6 @@ extension Double {
         return asNumberString() + "%"
     }
     
-    
     /// Convert a Double to a String with K, M, Bn, Tr abbreviations.
     /// ```
     /// Convert 12 to 12.00
@@ -119,6 +118,4 @@ extension Double {
             return "\(sign)\(self)"
         }
     }
-
-    
 }
