@@ -22,7 +22,7 @@ struct HomeView: View {
                 .ignoresSafeArea()
                 .sheet(isPresented: $showPortofolioView) {
                     PortofolioView()
-//                        .environmentObject(vm) // sheet creates a new environment so we have to pass the environment object
+                        .environmentObject(vm) // sheet creates a new environment so we have to pass the environment object
                 }
             
             // content layer
