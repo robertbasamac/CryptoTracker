@@ -51,7 +51,7 @@ import Foundation
    }
  */
 
-struct CoinModel: Identifiable, Codable {
+struct CoinModel: Identifiable, Codable, Hashable, Equatable {
     let id, symbol, name: String
     let image: String
     let currentPrice: Double
@@ -97,6 +97,14 @@ struct CoinModel: Identifiable, Codable {
         case sparklineIn7D = "sparkline_in_7d"
         case priceChangePercentage24HInCurrency = "price_change_percentage_24h_in_currency"
         case currentHoldings
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        return hasher.combine(id)
+    }
+    
+    static func == (lhs: CoinModel, rhs: CoinModel) -> Bool {
+        return lhs.id == rhs.id
     }
     
     func updateHoldings(amount: Double) -> CoinModel {

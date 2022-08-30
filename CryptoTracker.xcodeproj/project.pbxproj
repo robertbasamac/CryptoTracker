@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		092CDA3228BCD50F005EBE50 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092CDA3128BCD50F005EBE50 /* HapticManager.swift */; };
+		092CDA3828BD2F21005EBE50 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092CDA3728BD2F21005EBE50 /* DetailView.swift */; };
 		092DDB4D28A7AAFA00CE8235 /* CryptoTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DDB4C28A7AAFA00CE8235 /* CryptoTrackerApp.swift */; };
 		092DDB5428A7AAFB00CE8235 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 092DDB5328A7AAFB00CE8235 /* Preview Assets.xcassets */; };
 		092DDB5B28A7ABE600CE8235 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 092DDB5A28A7ABE600CE8235 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		092CDA3128BCD50F005EBE50 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		092CDA3728BD2F21005EBE50 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		092DDB4928A7AAFA00CE8235 /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		092DDB4C28A7AAFA00CE8235 /* CryptoTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerApp.swift; sourceTree = "<group>"; };
 		092DDB5328A7AAFB00CE8235 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -86,6 +88,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		092CDA3428BD2BA8005EBE50 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				092CDA3528BD2E26005EBE50 /* ViewModels */,
+				092CDA3628BD2E32005EBE50 /* Views */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		092CDA3528BD2E26005EBE50 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		092CDA3628BD2E32005EBE50 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				092CDA3728BD2F21005EBE50 /* DetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		092DDB4028A7AAFA00CE8235 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +167,7 @@
 			children = (
 				092DDB6528A7B60C00CE8235 /* Components */,
 				092DDB6028A7B3F900CE8235 /* Home */,
+				092CDA3428BD2BA8005EBE50 /* Detail */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -319,6 +346,7 @@
 				0945275A28B8F21D00FF5642 /* PortofolioDataService.swift in Sources */,
 				092DDB7728A81E7D00CE8235 /* HomeViewModel.swift in Sources */,
 				092DDB6428A7B42C00CE8235 /* HomeView.swift in Sources */,
+				092CDA3828BD2F21005EBE50 /* DetailView.swift in Sources */,
 				092DDB4D28A7AAFA00CE8235 /* CryptoTrackerApp.swift in Sources */,
 				09A7E54B28AEAAE60064F686 /* LocalFileManager.swift in Sources */,
 				094D9EA528B5126C005EDB81 /* HomeStatsView.swift in Sources */,
