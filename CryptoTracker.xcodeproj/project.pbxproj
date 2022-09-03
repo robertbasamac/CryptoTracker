@@ -22,6 +22,8 @@
 		092DDB7528A8071400CE8235 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DDB7428A8071400CE8235 /* Double.swift */; };
 		092DDB7728A81E7D00CE8235 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092DDB7628A81E7D00CE8235 /* HomeViewModel.swift */; };
 		092FDBC128C36F6B0046925C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FDBC028C36F6B0046925C /* SettingsView.swift */; };
+		092FDBC628C37D370046925C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 092FDBC528C37D370046925C /* LaunchScreen.storyboard */; };
+		092FDBC828C37EDA0046925C /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FDBC728C37EDA0046925C /* LaunchView.swift */; };
 		0945275828B8ECEC00FF5642 /* PortofolioContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0945275628B8ECEC00FF5642 /* PortofolioContainer.xcdatamodeld */; };
 		0945275A28B8F21D00FF5642 /* PortofolioDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0945275928B8F21D00FF5642 /* PortofolioDataService.swift */; };
 		094D9E9D28B4EA1F005EDB81 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D9E9C28B4EA1F005EDB81 /* SearchBarView.swift */; };
@@ -65,6 +67,8 @@
 		092DDB7428A8071400CE8235 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		092DDB7628A81E7D00CE8235 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		092FDBC028C36F6B0046925C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		092FDBC528C37D370046925C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		092FDBC728C37EDA0046925C /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		0945275728B8ECEC00FF5642 /* PortofolioContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PortofolioContainer.xcdatamodel; sourceTree = "<group>"; };
 		0945275928B8F21D00FF5642 /* PortofolioDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortofolioDataService.swift; sourceTree = "<group>"; };
 		094D9E9C28B4EA1F005EDB81 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				092DDB6528A7B60C00CE8235 /* Components */,
+				092FDBC328C37D1E0046925C /* Launch */,
 				092DDB6028A7B3F900CE8235 /* Home */,
 				092CDA3428BD2BA8005EBE50 /* Detail */,
 				092FDBBE28C36F410046925C /* Settings */,
@@ -264,6 +269,23 @@
 			isa = PBXGroup;
 			children = (
 				092FDBC028C36F6B0046925C /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		092FDBC328C37D1E0046925C /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				092FDBC428C37D2B0046925C /* Views */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		092FDBC428C37D2B0046925C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				092FDBC528C37D370046925C /* LaunchScreen.storyboard */,
+				092FDBC728C37EDA0046925C /* LaunchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -358,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092FDBC628C37D370046925C /* LaunchScreen.storyboard in Resources */,
 				092DDB5428A7AAFB00CE8235 /* Preview Assets.xcassets in Resources */,
 				092DDB5B28A7ABE600CE8235 /* Assets.xcassets in Resources */,
 			);
@@ -377,6 +400,7 @@
 				094D9E9F28B4EFBC005EDB81 /* UIApplication.swift in Sources */,
 				0945275828B8ECEC00FF5642 /* PortofolioContainer.xcdatamodeld in Sources */,
 				092FDBC128C36F6B0046925C /* SettingsView.swift in Sources */,
+				092FDBC828C37EDA0046925C /* LaunchView.swift in Sources */,
 				09A7D6CD28A94D1800A305CA /* CoinImageViewModel.swift in Sources */,
 				09A7D6C928A94AB500A305CA /* CoinImageView.swift in Sources */,
 				0955FCF528BE0FB100637739 /* CoinDetailModel.swift in Sources */,
@@ -542,7 +566,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -572,7 +596,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
