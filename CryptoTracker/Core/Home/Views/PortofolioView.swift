@@ -28,6 +28,10 @@ struct PortofolioView: View {
                     }
                 }
             }
+            .background(
+                Color.theme.background
+                    .ignoresSafeArea()
+            )
             .navigationTitle("Edit Portofolio")
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
