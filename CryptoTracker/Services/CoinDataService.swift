@@ -24,7 +24,7 @@ class CoinDataService {
         coinSubscription = NetworkingManager.download(url: url)
 //            5. decode the data
             .decode(type: [CoinModel].self, decoder: JSONDecoder())
-        
+            .receive(on: DispatchQueue.main)
 //            6. put the item into our app using sink
             .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnedCoins) in
                 self?.allCoins = returnedCoins

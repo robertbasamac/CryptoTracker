@@ -32,10 +32,10 @@ class NetworkingManager {
         return URLSession.shared.dataTaskPublisher(for: url)
         
 //            2. subscribe publisher on background thread (this is done by default so this step can be omitted)
-            .subscribe(on: DispatchQueue.global(qos: .default))
+//            .subscribe(on: DispatchQueue.global(qos: .default))
         
-//            3. receive on main thread (needed in order to update the UI)
-            .receive(on: DispatchQueue.main)
+//            3. receive on main thread (needed in order to update the UI) -> move this to receive on main thread much later and do more work on global thread
+//            .receive(on: DispatchQueue.main)
 
 //            4. check that the data is good (using tryMap)
 //            .tryMap { (output) -> Data in
@@ -46,6 +46,7 @@ class NetworkingManager {
 //                return output.data
 //            }
             .tryMap({ try handleUrlResponse(output: $0, url: url) })
+            .retry(3)
             .eraseToAnyPublisher() // will take the publisher and convert it to AnyPublisher -> we can change the return data type of the function
     }
     
