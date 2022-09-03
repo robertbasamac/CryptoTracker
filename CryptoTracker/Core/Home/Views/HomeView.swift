@@ -16,6 +16,7 @@ struct HomeView: View {
     
     @State private var selectedCoin: CoinModel? = nil
     @State private var showDetailView: Bool = false
+    @State private var showSettingsView: Bool = false
     
     var body: some View {
         
@@ -46,6 +47,9 @@ struct HomeView: View {
                     portofolioCoinsList
                         .transition(.move(edge: .trailing))
                 }
+            }
+            .sheet(isPresented: $showSettingsView) {
+                SettingsView()
             }
         }
 //        .sheet(item: $selectedCoin) { coin in
@@ -80,6 +84,8 @@ extension HomeView {
                 .onTapGesture {
                     if showPortofolio {
                         showPortofolioView.toggle()
+                    } else {
+                        showSettingsView.toggle()
                     }
                 }
                 .background(
