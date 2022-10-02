@@ -53,6 +53,8 @@ struct HomeView: View {
                     }
                     .transition(.move(edge: .trailing))
                 }
+                
+                Spacer()
             }
             .sheet(isPresented: $showSettingsView) {
                 SettingsView()
