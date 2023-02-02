@@ -19,6 +19,8 @@ struct CryptoTrackerApp: App {
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color.theme.accent)]
         UINavigationBar.appearance().tintColor = UIColor(Color.theme.accent)
         UITableView.appearance().backgroundColor = .clear
+        
+        UIRefreshControl.appearance().tintColor = UIColor(Color.theme.accent)
     }
     
     var body: some Scene {

@@ -53,11 +53,13 @@ struct HomeView: View {
                     }
                     .transition(.move(edge: .trailing))
                 }
-                
-                Spacer()
             }
+            .frame(maxHeight: .infinity, alignment: .top)
             .sheet(isPresented: $showSettingsView) {
                 SettingsView()
+            }
+            .refreshable {
+                vm.reloadData()
             }
         }
 //        .sheet(item: $selectedCoin) { coin in

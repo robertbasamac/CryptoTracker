@@ -28,7 +28,6 @@ class PortofolioDataService {
     }
     
     //MARK: - Public
-    
     func updatePortofolio(coin: CoinModel, amount: Double) {
         if let entity = savedEntities.first(where: { $0.coinID == coin.id }) {
             if amount > 0 {

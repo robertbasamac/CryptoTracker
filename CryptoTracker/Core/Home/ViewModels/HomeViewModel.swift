@@ -24,14 +24,14 @@ class HomeViewModel: ObservableObject {
     private var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
     
     enum SortOption {
-            case rank, rankReversed, holdings, holdingsReversed, price, priceReversed
+        case rank, rankReversed, holdings, holdingsReversed, price, priceReversed
     }
     
     init() {
         addSubscribers()
     }
     
-    func addSubscribers() {
+    private func addSubscribers() {
         // this is being removed because the other subscriber already updates allCoins
 //        dataService.$allCoins
 //            .sink { [weak self] (returnedCoins) in
@@ -42,7 +42,7 @@ class HomeViewModel: ObservableObject {
         $searchText
             .combineLatest(coinDataService.$allCoins, $sortOption)
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
-            .map(filterAndSortCoings)
+            .map(filterAndSortCoins)
             .sink { [weak self] returnedCoins in
                 self?.allCoins = returnedCoins
             }
@@ -81,7 +81,7 @@ class HomeViewModel: ObservableObject {
         HapticManager.notification(type: .success)
     }
     
-    private func filterAndSortCoings(text: String, coins: [CoinModel], sort: SortOption) -> [CoinModel] {
+    private func filterAndSortCoins(text: String, coins: [CoinModel], sort: SortOption) -> [CoinModel] {
         var updatedCoins = filterCoins(text: text, coins: coins)
         sortCoins(sort: sort, coins: &updatedCoins)
         
