@@ -26,17 +26,17 @@ class NetworkingManager {
         }
     }
     
-    static func download(url: URL) -> AnyPublisher<Data, any Error> {
+    @available(*, renamed: "downloadWithAsync")
+    static func downloadWithCombine(url: URL) -> AnyPublisher<Data, any Error> {
         
 //        1. create the Publisher
         return URLSession.shared.dataTaskPublisher(for: url)
-        
-//            2. subscribe publisher on background thread (this is done by default so this step can be omitted)
+//            2. subscribe publisher on background thread (this is done by default so this step can be skipped)
 //            .subscribe(on: DispatchQueue.global(qos: .default))
-        
+//
 //            3. receive on main thread (needed in order to update the UI) -> move this to receive on main thread much later and do more work on global thread
 //            .receive(on: DispatchQueue.main)
-
+//
 //            4. check that the data is good (using tryMap)
 //            .tryMap { (output) -> Data in
 //                guard let response = output.response as? HTTPURLResponse,
@@ -50,13 +50,30 @@ class NetworkingManager {
             .eraseToAnyPublisher() // will take the publisher and convert it to AnyPublisher -> we can change the return data type of the function
     }
     
-    static func handleUrlResponse(output: URLSession.DataTaskPublisher.Output, url: URL) throws -> Data {
+    static func downloadWithAsync(url: URL) async throws -> Data {
+        do {
+            let output = try await URLSession.shared.data(from: url)
+            return try handleUrlResponse(output: output, url: url)
+        } catch {
+            throw error
+        }
+    }
+    
+    static func handleUrlResponse(output: URLSession.DataTaskPublisher.Output, url: URL) throws -> Data {       
         guard let response = output.response as? HTTPURLResponse,
               response.statusCode >= 200 && response.statusCode < 300 else {
             throw NetworkingError.badURLResponse(url: url)
         }
         return output.data
     }
+    
+//    static func handleUrlResponse(data: Data, response: URLResponse, url: URL) throws -> Data {
+//        guard let response = response as? HTTPURLResponse,
+//              response.statusCode >= 200 && response.statusCode < 300 else {
+//            throw NetworkingError.badURLResponse(url: url)
+//        }
+//        return data
+//    }
     
     static func handleCompletion(completion: Subscribers.Completion<Error>) {
         switch completion {

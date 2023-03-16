@@ -18,13 +18,22 @@ class CoinDetailDataService {
     
     init(coin: CoinModel) {
         self.coin = coin
-        getCoinDetails()
+        
+        Task {
+            do {
+                try await getCoinDetailsWithAsync()
+            } catch {
+                throw error
+            }
+        }
+        
+//        getCoinDetails()
     }
     
-    func getCoinDetails() {
+    private func getCoinDetails() {
         guard let url = URL(string: "https://api.coingecko.com/api/v3/coins/\(coin.id)?localization=false&tickers=false&market_data=false&community_data=false&developer_data=false&sparkline=false") else { return }
         
-        coinDetailSubscription = NetworkingManager.download(url: url)
+        coinDetailSubscription = NetworkingManager.downloadWithCombine(url: url)
 //            5. decode the data
             .decode(type: CoinDetailModel.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
@@ -33,5 +42,20 @@ class CoinDetailDataService {
                 self?.coinDetails = returnedCoinDetails
                 self?.coinDetailSubscription?.cancel()
             })
+    }
+    
+    private func getCoinDetailsWithAsync() async throws {
+        guard let url = URL(string: "https://api.coingecko.com/api/v3/coins/\(coin.id)?localization=false&tickers=false&market_data=false&community_data=false&developer_data=false&sparkline=false") else { return }
+
+        do {
+            let data = try await NetworkingManager.downloadWithAsync(url: url)
+            let coinsDetails = try JSONDecoder().decode(CoinDetailModel.self, from: data)
+            
+            await MainActor.run(body: {
+                coinDetails = coinsDetails
+            })
+        } catch {
+            throw error
+        }
     }
 }
